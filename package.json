@@ -1,0 +1,39 @@
+{
+  "name": "shopping_list",
+  "version": "1.0.0",
+  "description": "Simple Shopping List",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "bootstrap": "^4.5.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.7",
+    "nodemon": "^2.0.6",
+    "path": "^0.12.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server.js",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maxx105/shopping_list.git"
+  },
+  "author": "Maxx Sanner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Maxx105/shopping_list/issues"
+  },
+  "homepage": "https://github.com/Maxx105/shopping_list#readme"
+}
