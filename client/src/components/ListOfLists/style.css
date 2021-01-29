@@ -1,0 +1,11 @@
+.list-group {
+    margin-top: 20px;
+}
+
+.list-group-item:hover {
+    background-color: lightgrey;
+}
+
+.list-group-item:active {
+    background-color: grey;
+}

@@ -21,7 +21,8 @@ const UserSchema = new mongoose.Schema({
   last_name: {
     type: String,
     required: true
-  }
+  },
+  lists: [{ type: mongoose.Schema.Types.ObjectId, ref: "List" }]
 });
 
 UserSchema.pre("save", function (next) {

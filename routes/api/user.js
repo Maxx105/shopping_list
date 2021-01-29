@@ -64,6 +64,23 @@ router.get(
     }
 );
 
+
+router.get(
+  "/userLists",
+  passport.authenticate("jwt", { session: false }),
+  function (req, res) {
+    User.findById({ _id: req.user._id })
+      .populate("lists")
+      .exec((err, document) => {
+        if (err) {
+          res.json({ message: "Error has occurred", error: true });
+        } else {
+          res.json({ lists: document.lists, authenticated: true });
+        }
+      });
+  }
+);
+
 router.use("*", function (req, res) {
     res.sendFile(path.join(__dirname, "../../client/build/index.html"));
 });

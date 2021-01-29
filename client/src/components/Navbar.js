@@ -47,12 +47,12 @@ function Navbar() {
             <Link to="/">
               <li className="nav-item nav-link" id="link">Home</li>
             </Link>
-            <Link to="/lists">
+            {/* <Link to="/lists">
               <li className="nav-item nav-link" id="link">My Lists</li>
-            </Link>
-            <Link to="/createlist">
+            </Link> */}
+            {/* <Link to="/createlist">
               <li className="nav-item nav-link" id="link" >Create New List</li>
-            </Link>
+            </Link> */}
           </ul>
           <ul className="navbar-nav">
             <Link to="/">

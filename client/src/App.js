@@ -17,7 +17,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home}></Route>
           <UnPrivateRoute path="/login" component={Login}></UnPrivateRoute>
-          <PrivateRoute path="/lists" component={Lists}></PrivateRoute>
+          <PrivateRoute path="/lists/:id" component={Lists}></PrivateRoute>
           <PrivateRoute path="/createlist" component={CreateList}></PrivateRoute>
           <UnPrivateRoute path="/signup" component={Signup}></UnPrivateRoute>
           <Route path="*" component={NoMatch}></Route>
