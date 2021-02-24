@@ -5,7 +5,7 @@ function List(props) {
 
     function deleteItem(id) {
         ListAPI.deleteListItem(id)
-            .then(res => props.loadLists())
+            .then(res => props.loadList())
             .catch((err) => console.log(err.response)); 
     }
 
