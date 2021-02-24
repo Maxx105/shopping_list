@@ -40,7 +40,44 @@ const ListAPI = {
           return { message: "Not Signed In", error: true };
         }
       });
-  }
+  },
+  // updateById: function (item) {
+  //   return axios
+  //       .put("/api/list/lists", item)
+  //       .then(res => res.data)
+  //       .catch(err => console.log(err.response))
+  // },
+  createListItem: function (listItem) {
+      return axios
+        .post("/api/list/items", listItem)
+        .then((res) => res.data)
+        .catch((err) => {
+            if (err.response.status === 401) {
+            return { message: "Not Signed In", error: true };
+            }
+        });
+  },
+  deleteListItem: function (id) {
+    return axios
+        .delete("/api/list/items/" + id)
+        .then(res => res.data)
+        .catch((err) => {
+            if (err.response.status === 401) {
+                return { message: "Not Signed In", error: true };
+            }
+        });
+  },
+  // addItemToList: function(id, item) {
+  //   return axios
+  //       .post("/api/list/lists/" + id, item)
+  //       .then(res => res.data)
+  //       .catch((err) => {
+  //           if (err.response.status === 401) {
+  //               return { message: "Not Signed In", error: true };
+  //           }
+  //       });
+  // },
+
 };
 
 export default ListAPI;

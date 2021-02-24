@@ -5,7 +5,7 @@ import "./style.css";
 
 function ListOfLists(props) {
 
-    function deleteListItem(id) {
+    function deleteListName(id) {
         ListAPI.deleteList(id)
             .then((res) => props.loadLists())
             .catch((err) => console.log(err.response));
@@ -19,7 +19,7 @@ function ListOfLists(props) {
                             <li className="list-group-item">{list.name}</li>
                         </Link>
                         <div className="input-group-append">
-                            <button type="submit" className="btn btn-danger" onClick={() => deleteListItem(list._id)}> 
+                            <button type="submit" className="btn btn-danger" onClick={() => deleteListName(list._id)}> 
                                 -
                             </button>
                         </div>

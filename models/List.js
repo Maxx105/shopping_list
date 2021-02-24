@@ -5,19 +5,14 @@ const ListSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    items: {
-        type: Array
-    },
     date:{
         type:Date,
         default: Date.now
     },
-    user: {
-      type: String
-    },
-    userID: {
-      type: String,
-    }
+    items: [{ type: mongoose.Schema.Types.ObjectId, ref: "ListItems" }]
+    // items: {
+    //     type: Array
+    // }
 });
 
 module.exports = mongoose.model("List", ListSchema);
