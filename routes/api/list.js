@@ -33,7 +33,6 @@ router.post(
     passport.authenticate("jwt", { session: false }),
     function (req, res) {
         const list = new List(req.body);
-        console.log(list)
         list.save((err) => {
             if (err) {
                 res.json({ message: err.message, error: true });
