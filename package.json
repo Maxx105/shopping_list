@@ -2,6 +2,9 @@
   "name": "shopping_list",
   "version": "1.0.0",
   "description": "Simple Shopping List",
+  "engines": {
+    "node": "v12.16.1"
+  },
   "main": "server.js",
   "dependencies": {
     "axios": "^0.21.0",
@@ -38,9 +41,6 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Maxx105/shopping_list/issues"
-  },
-  "engines": {
-    "node": "12.11.1"
   },
   "homepage": "https://github.com/Maxx105/shopping_list#readme"
 }
