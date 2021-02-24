@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Simple Shopping List",
   "engines": {
-    "node": "v12.16.1"
+    "node": "14.x"
   },
   "main": "server.js",
   "dependencies": {
