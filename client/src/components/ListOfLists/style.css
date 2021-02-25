@@ -2,10 +2,10 @@
     margin-top: 20px;
 }
 
-.list-group-item:hover {
+#list-name:hover {
     background-color: lightgrey;
 }
 
-.list-group-item:active {
+#list-name:active {
     background-color: grey;
 }
