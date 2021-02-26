@@ -26,7 +26,7 @@ export default ({ children }) => {
           style={{
             height: "100vh",
             backgroundImage:
-              "url(" + "https://image.freepik.com/free-vector/spot-light-background_1284-4685.jpg" + ")",
+              "url(" + process.env.PUBLIC_URL + "/loadingBG.jpg" + ")",
           }}
         ></div>
       ) : (
