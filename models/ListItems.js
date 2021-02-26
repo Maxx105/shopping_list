@@ -9,6 +9,10 @@ const ListItemsSchema = new mongoose.Schema({
         type: Number,
         default: 1,
     },
+    textDec: {
+        type: String,
+        default: ""
+    },
     listID: {
         type: String
     }

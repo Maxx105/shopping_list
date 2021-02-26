@@ -21,6 +21,7 @@ router
 router
     .route("/items")
     .get(listItemsController.findAll)
+    .put(listItemsController.updateStyle)
     .post(listItemsController.create);
 
 router

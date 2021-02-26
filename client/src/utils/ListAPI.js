@@ -67,16 +67,16 @@ const ListAPI = {
             }
         });
   },
-  // addItemToList: function(id, item) {
-  //   return axios
-  //       .post("/api/list/lists/" + id, item)
-  //       .then(res => res.data)
-  //       .catch((err) => {
-  //           if (err.response.status === 401) {
-  //               return { message: "Not Signed In", error: true };
-  //           }
-  //       });
-  // },
+  updateStyle: function (style) {
+    return axios
+      .put("/api/list/items", style)
+      .then(res => res.data)
+      .catch((err) => {
+          if (err.response.status === 401) {
+              return { message: "Not Signed In", error: true };
+          }
+      });
+  }
 
 };
 

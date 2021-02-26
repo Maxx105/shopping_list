@@ -32,6 +32,13 @@ module.exports = {
         .then((dbModel) => dbModel.remove())
         .then((dbModel) => res.json(dbModel))
         .catch((err) => res.status(422).json(err));
+  },
+  updateStyle: function (req, res) {
+      ListItems
+        .findByIdAndUpdate( {_id: req.body.id },
+        { "$set":  {"textDec": req.body.textDec} })
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
   }
-  
+
 }

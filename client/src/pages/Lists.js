@@ -10,7 +10,7 @@ function Lists(props) {
     const [listName, setListName] = useState('');
     const [listItems, setListItems] = useState([]);
     const [item, setItem] = useState('');
-    const [textDec, setTextDec] = useState({});
+    const [textDecStyle, setTextDecStyle] = useState({});
 
     const { id } = useParams();
     useEffect(() => {
@@ -36,14 +36,6 @@ function Lists(props) {
         postItem();
     }
 
-    function setTextDecStyle() {
-        if (textDec !== {textDecoration: "line-through"}) {
-            setTextDec({textDecoration: "line-through"})
-        } else {
-            setTextDec({textDecoration: "underline"})
-        }
-    }
-
     function postItem() {
         ListAPI.createListItem({
             listID: id,
@@ -52,6 +44,28 @@ function Lists(props) {
         })
             .then(res => loadList())
             .catch((err) => console.log(err.response));
+    }
+
+    function updateStyle(style) {
+        ListAPI.updateStyle(style)
+        .then(res => loadList())
+        .catch((err) => console.log(err.response));
+    }
+
+    function setTextDec(id, style) {
+        if (!document.getElementById(id).style.textDecoration) {
+            // document.getElementById(id).style.textDecoration = style;
+            updateStyle({
+                textDec: "line-through",
+                id: document.getElementById(id).id
+            })
+        } else {
+            // document.getElementById(id).style.textDecoration = "";
+            updateStyle({
+                textDec: "",
+                id: document.getElementById(id).id
+            })
+        }
     }
 
     return (
@@ -64,8 +78,7 @@ function Lists(props) {
             <List
                 loadList={() => loadList()}
                 listItems = {listItems}
-                textDec = {textDec}
-                setTextDecStyle = {setTextDecStyle}
+                setTextDec = {setTextDec}
             ></List>
         </div>
     );
