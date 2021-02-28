@@ -16,6 +16,7 @@ function Lists(props) {
     const { id } = useParams();
     useEffect(() => {
         loadList()
+        document.getElementById('quantity').value = "1";
     }, []);
     
     function loadList() {
@@ -43,7 +44,7 @@ function Lists(props) {
         e.preventDefault();
         setQuantity(1);
         document.getElementById('listItem').value = "";
-        document.getElementById('quantity').value = "";
+        document.getElementById('quantity').value = "1";
         postItem();
     }
 
