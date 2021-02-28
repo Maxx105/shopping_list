@@ -3,8 +3,6 @@ import { useParams } from "react-router-dom";
 import ListAPI from "../utils/ListAPI";
 import List from "../components/List";
 import ListAddForm from "../components/ListAddForm";
-// import { AuthContext } from "../Context/AuthContext";
-// import LoginForm from "../components/LoginForm";
 
 function Lists(props) {
     const [listName, setListName] = useState('');
@@ -16,7 +14,7 @@ function Lists(props) {
     const { id } = useParams();
     useEffect(() => {
         loadList()
-        document.getElementById('quantity').value = "1";
+        document.getElementById('quantity').value = "";
     }, []);
     
     function loadList() {
@@ -43,8 +41,9 @@ function Lists(props) {
     function handleFormSubmit(e) {
         e.preventDefault();
         setQuantity(1);
+        setItem('')
         document.getElementById('listItem').value = "";
-        document.getElementById('quantity').value = "1";
+        document.getElementById('quantity').value = "";
         postItem();
     }
 
