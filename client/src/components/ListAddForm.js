@@ -11,7 +11,7 @@ function ListAddForm(props) {
   return (
       
     <div>
-        <form onSubmit={props.onSubmit}>
+        <form>
             <div className="form-group" style={formStyle}>
                 <label>Add Item</label>
                 <div className="input-group mb-3">
@@ -23,10 +23,19 @@ function ListAddForm(props) {
                         placeholder="Enter item here"
                         onChange={props.onChange}
                     />
+                    <input id="quantity" type="number" step="1" placeholder="1" onChange = {props.onQuantityChange}/>
+                    {/* <div className="input-group-append">
+                        <button type="submit" className="btn btn-success"> 
+                            up
+                        </button>
+                        <button type="submit" className="btn btn-success"> 
+                            down
+                        </button>
+                    </div> */}
                     <div className="input-group-append">
-                    <button type="submit" className="btn btn-primary" style={buttonStyle}>
-                        +
-                    </button>
+                        <button type="submit" className="btn btn-primary" style={buttonStyle} onClick={props.onSubmit}>
+                            +
+                        </button>
                     </div>
                 </div>
             </div>

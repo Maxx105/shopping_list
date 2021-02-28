@@ -10,6 +10,7 @@ function Lists(props) {
     const [listName, setListName] = useState('');
     const [listItems, setListItems] = useState([]);
     const [item, setItem] = useState('');
+    const [quantity, setQuantity] = useState(1);
     const [textDecStyle, setTextDecStyle] = useState({});
 
     const { id } = useParams();
@@ -30,16 +31,26 @@ function Lists(props) {
         setItem({[e.target.name]: e.target.value})
     }
 
+    function handleQuantityChange(e) {
+        e.preventDefault();
+        if (parseInt(e.target.value) < 1 ) {
+            document.getElementById('quantity').value = "1";
+        }
+        setQuantity(parseInt(e.target.value));
+    }
+
     function handleFormSubmit(e) {
         e.preventDefault();
+        setQuantity(1);
         document.getElementById('listItem').value = "";
+        document.getElementById('quantity').value = "";
         postItem();
     }
 
     function postItem() {
         ListAPI.createListItem({
             listID: id,
-            quantity: 1,
+            quantity: quantity,
             name: item.listItem
         })
             .then(res => loadList())
@@ -54,13 +65,13 @@ function Lists(props) {
 
     function setTextDec(id, style) {
         if (!document.getElementById(id).style.textDecoration) {
-            // document.getElementById(id).style.textDecoration = style;
+            document.getElementById(id).style.textDecoration = "line-through"
             updateStyle({
                 textDec: "line-through",
                 id: document.getElementById(id).id
             })
         } else {
-            // document.getElementById(id).style.textDecoration = "";
+            document.getElementById(id).style.textDecoration = ""
             updateStyle({
                 textDec: "",
                 id: document.getElementById(id).id
@@ -74,6 +85,7 @@ function Lists(props) {
             <ListAddForm
                 onSubmit = {handleFormSubmit}
                 onChange = {handleInputChange}
+                onQuantityChange = {handleQuantityChange}
             ></ListAddForm>
             <List
                 loadList={() => loadList()}
