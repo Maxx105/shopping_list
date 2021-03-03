@@ -41,7 +41,7 @@ function Lists(props) {
     function handleFormSubmit(e) {
         e.preventDefault();
         setQuantity(1);
-        setItem('')
+        setItem('');
         document.getElementById('listItem').value = "";
         document.getElementById('quantity').value = "";
         postItem();
