@@ -8,7 +8,7 @@ Click [here](https://basic-shopping-list.herokuapp.com/) to open the deployed ap
 (image coming soon)
 
 ## Description
-This is a very simple, user authenticated shopping list that allows you to create/remove lists as well as create/remove items to each of those lists. You can also click on the item to cross it out to signify that it is has been selected.
+This is a very simple, user authenticated shopping list that allows you to create/remove lists as well as create/remove items to/from each of those lists. You can also click on the item to cross it out to signify that it is has been selected.
 
 ## Table of Contents 
 * [Technologies](#Technologies) 
